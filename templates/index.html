@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Chatbot & Image Generator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Sidebar / Header -->
+    <header class="topbar">
+      <h1>🤖 AI Chatbot & Image Generator</h1>
+      <div class="tabs">
+        <button id="tab-chat" class="tab-btn active">💬 Chat</button>
+        <button id="tab-image" class="tab-btn">🎨 Image Gen</button>
+      </div>
+    </header>
+
+    <!-- Chat Panel -->
+    <section id="chat-panel" class="panel active">
+      <div id="chat-window" class="chat-window">
+        <div class="message assistant">
+          <span class="bubble">Hi! I'm your AI assistant. Ask me anything.</span>
+        </div>
+      </div>
+      <form id="chat-form" class="input-row">
+        <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" required />
+        <button type="submit">Send</button>
+        <button type="button" id="reset-btn" title="Clear conversation">Reset</button>
+      </form>
+    </section>
+
+    <!-- Image Generation Panel -->
+    <section id="image-panel" class="panel">
+      <div id="image-window" class="image-window">
+        <p class="placeholder-text">Your generated images will appear here.</p>
+      </div>
+      <form id="image-form" class="input-row">
+        <input type="text" id="image-input" placeholder="Describe the image you want..." autocomplete="off" required />
+        <button type="submit">Generate</button>
+      </form>
+    </section>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
